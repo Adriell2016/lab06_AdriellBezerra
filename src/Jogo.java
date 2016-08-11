@@ -1,4 +1,3 @@
-
 public class Jogo {
 
 	private String nome;
@@ -56,6 +55,12 @@ public class Jogo {
 	}
 	
 	public void registraJogada(int score, boolean zerou){
-		
+		setQuantasVezesJogou(getQuantasVezesZerou()+1);
+		if(zerou == true){
+			setQuantasVezesZerou(getQuantasVezesZerou()+1);
+		}
+		if(score > maiorScore){
+			setMaiorScore(score);
+		}
 	}
 }
