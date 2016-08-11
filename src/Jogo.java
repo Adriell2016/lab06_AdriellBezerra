@@ -54,6 +54,7 @@ public class Jogo {
 		this.quantasVezesZerou = quantasVezesZerou;
 	}
 	
+	//Adicionei esse método
 	public void registraJogada(int score, boolean zerou){
 		setQuantasVezesJogou(getQuantasVezesZerou()+1);
 		if(zerou == true){
