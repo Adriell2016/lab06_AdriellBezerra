@@ -1,5 +1,5 @@
 
 public enum Jogabilidade {
  
-	//Fiz nada ainda
+	//Fiz nada ainda.
 }
