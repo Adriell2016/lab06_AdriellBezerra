@@ -1,5 +1,7 @@
-public class Jogo {
+import java.util.ArrayList;
 
+public class Jogo {
+	private ArrayList<Jogabilidade> enums = new ArrayList<Jogabilidade>();
 	private String nome;
 	private double preco;
 	private int maiorScore;
@@ -63,5 +65,36 @@ public class Jogo {
 		if(score > maiorScore){
 			setMaiorScore(score);
 		}
+	}
+	
+	public void Jogabilidade(Jogabilidade jogabilidade){
+			boolean existe = false;
+			for (Jogabilidade jogabilidade2 : enums) {
+				if(jogabilidade == jogabilidade2){
+					existe = true;
+					System.out.println("Jogabilidade repetida não pode ser adicionada");
+					break;
+				}
+			}
+				
+			if(existe == false){
+				enums.add(jogabilidade);
+				System.out.println("Jogabilidade Adicionada");
+			}
+			
+		}
+	
+	public int tamanhoArray(){
+		return enums.size();
+	}
+	
+	public jogo.Jogabilidade imprimeEnums(int i){
+		
+		return enums.get(i);
+		
+	}
+	
+	public String toString(){
+		return "Nome: " + this.nome;
 	}
 }
