@@ -17,5 +17,14 @@ public class TesteComMain {
 		novoJogo.Jogabilidade(Jogabilidade.COOPERATIVO);
 		novoJogo.Jogabilidade(Jogabilidade.ONLINE);
 		novoJogo.imprimeEnums();
+		
+		System.out.println("\n\n");
+		
+		JogoLuta novoJogo2 = new JogoLuta("BoxePixel", 100.80);
+		novoJogo2.registraJogada(450, true);
+		novoJogo2.Jogabilidade(Jogabilidade.ONLINE);
+		novoJogo2.Jogabilidade(Jogabilidade.ONLINE);
+		novoJogo2.Jogabilidade(Jogabilidade.OFFLINE);
+		novoJogo2.imprimeEnums();
 	}
 }
