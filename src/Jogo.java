@@ -1,3 +1,5 @@
+package jogo;
+
 import java.util.ArrayList;
 
 public class Jogo {
@@ -72,28 +74,27 @@ public class Jogo {
 			for (Jogabilidade jogabilidade2 : enums) {
 				if(jogabilidade == jogabilidade2){
 					existe = true;
-					System.out.println("Jogabilidade repetida não pode ser adicionada");
+					//System.out.println("Jogabilidade repetida não pode ser adicionada");
 					break;
 				}
 			}
 				
 			if(existe == false){
 				enums.add(jogabilidade);
-				System.out.println("Jogabilidade Adicionada");
+				//System.out.println("Jogabilidade Adicionada");
 			}
 			
 		}
 	
-	public int tamanhoArray(){
-		return enums.size();
-	}
+	public void imprimeEnums(){
+		for(int i = 0; i < enums.size(); i++){
+			System.out.println(enums.get(i).toString());
+		}
 	
-	public jogo.Jogabilidade imprimeEnums(int i){
-		
-		return enums.get(i);
 		
 	}
 	
+	@Override
 	public String toString(){
 		return "Nome: " + this.nome;
 	}
