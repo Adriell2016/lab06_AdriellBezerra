@@ -12,10 +12,11 @@ public class UsuarioNoob extends Usuario{
 	public void comprarJogo(Jogo jogo){
 		double desconto = (10.0/100.0)*jogo.getPreco();
 		double precoComDesconto = (jogo.getPreco()-desconto);
-		comprarJogo(jogo);
+		super.comprarJogo(jogo);
 	    setQtdDinheiro(getQtdDinheiro() - precoComDesconto);
 	    setX2p(getX2p() + (((int) jogo.getPreco()) * 10));
 	}
+	
 		
 	
 }

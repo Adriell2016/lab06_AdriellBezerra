@@ -10,11 +10,15 @@ public class Usuario {
 	private ArrayList<Jogo> jogosComprados = new ArrayList<Jogo>();
 	
 	
+	public void setJogosComprados(ArrayList<Jogo> jogosComprados) {
+		this.jogosComprados = jogosComprados;
+	}
+
 	public Usuario(String nome, String nomeLogin, double qtdDinheiro, int x2p){
 		this.nome = nome;
 		this.nomeLogin = nomeLogin;
 		this.qtdDinheiro = qtdDinheiro;
-		this.setX2p(x2p);
+		this.x2p = x2p;
 	}
 	
 	public int getX2p() {
@@ -61,32 +65,42 @@ public class Usuario {
 		this.qtdDinheiro += dinheiro;
 	}
 	
-	public void registraJogada(Jogo jogo, int score, boolean zerou) throws Exception{
+	public void registraJogada(Jogo jogo, int score, boolean zerou){
 		
-		if(score > 100000){
-			throw new Exception("O score nao pode ser maior que 100000");
+		for (int i = 0; i < jogosComprados.size(); i++){
+			
+			if(jogo.equals(jogosComprados.get(i))){
+				jogosComprados.get(i).setQuantasVezesJogou(jogosComprados.get(i).getQuantasVezesJogou()+1);
+				//jogosComprados.get(i).registraJogada(score, zerou);
+				
+				if (jogo.getTipo().equals("rpg")){
+					setX2p(getX2p()+10);
+					jogosComprados.get(i).registraJogada(score, zerou);
+				}else if(jogo.getTipo().equals("plataforma")){
+					setX2p(getX2p()+20);
+					jogosComprados.get(i).registraJogada(score, zerou);
+				}else{
+					if(score > jogosComprados.get(i).getMaiorScore()){
+						int s = score/1000;
+						setX2p(getX2p()+(1*s));
+						jogosComprados.get(i).registraJogada(score, zerou);
+					}
+				}
+			break;
+			}
 		}
-		
-		jogo.registraJogada(score, zerou);
-		if (jogo.getTipo().equals("rpg")){
-			setX2p(getX2p()+10);
-			if(score > jogo.getMaiorScore()){
-				jogo.setMaiorScore(score);
-			}
-		}else if(jogo.getTipo().equals("plataforma")){
-			setX2p(getX2p()+20);
-			if(score > jogo.getMaiorScore()){
-				jogo.setMaiorScore(score);
-			}
-		}else{
-			if(score > jogo.getMaiorScore()){
-				int s = score/1000;
-				setX2p(getX2p()+(1*s));
-				jogo.setMaiorScore(score);
-			}
+			
+	}
+	
+	public void imprimeJogosComprados(){
+		for (Jogo jogo : jogosComprados) {
+			System.out.println(jogo);
 		}
-		
-		
+	}
+	
+	@Override
+	public String toString(){
+		return "Usuario: " + this.nome + "\nX2P: " + this.x2p;
 	}
 	
 }

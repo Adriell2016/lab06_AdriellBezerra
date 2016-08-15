@@ -2,8 +2,8 @@ package jogo;
 
 public class TesteComMain {
 	public static void main(String[] args){
-		testaJogabilidade();
-		
+		//testaJogabilidade();
+		compraJogoRegistraJogada();
 		
 	}
 	
@@ -26,5 +26,36 @@ public class TesteComMain {
 		novoJogo2.Jogabilidade(Jogabilidade.ONLINE);
 		novoJogo2.Jogabilidade(Jogabilidade.OFFLINE);
 		novoJogo2.imprimeEnums();
+	}
+	
+	public static void compraJogoRegistraJogada(){
+		
+		UsuarioNoob usuario1 = new UsuarioNoob("Adriell", "adriell.bezerra", 1000);
+		Jogo novoJogo3 = new Jogo("suicide", 400.00, "rpg");
+		usuario1.comprarJogo(novoJogo3);
+		usuario1.registraJogada(novoJogo3, 1000, false);
+		System.out.println(usuario1);
+		usuario1.registraJogada(novoJogo3, 100, false);
+		usuario1.imprimeJogosComprados();
+		
+		System.out.println("\n\n");
+		UsuarioVeterano usuario2 = new UsuarioVeterano("Adriell Bezerra", "adriell.mestre", 1000);
+		Jogo novoJogo4 = new Jogo("Mortal Combat", 400.00, "rpg");
+		usuario2.comprarJogo(novoJogo4);
+		usuario2.registraJogada(novoJogo4, 1000, false);
+		System.out.println(usuario2);
+		usuario2.registraJogada(novoJogo4, 2000, true);;
+		usuario2.imprimeJogosComprados();
+		System.out.println(usuario2);
+		
+		System.out.println("\n\n");
+		UsuarioVeterano usuario3 = new UsuarioVeterano("Ariell Bezerra", "ariell.sousa", 1000.00);
+		JogoLuta novoJogo5 = new JogoLuta("Mortal Combat", 400.00);
+		usuario3.comprarJogo(novoJogo5);
+		usuario3.registraJogada(novoJogo5, 10, false);
+		System.out.println(usuario3);
+		usuario3.registraJogada(novoJogo5, 2000, false);
+		usuario3.imprimeJogosComprados();
+		System.out.println(usuario3);
 	}
 }

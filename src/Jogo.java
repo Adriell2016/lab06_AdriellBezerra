@@ -14,9 +14,9 @@ public class Jogo {
 	public Jogo(String nome, double preco, String tipo){
 		this.nome = nome;
 		this.preco = preco;
-		maiorScore = 0;
-		quantasVezesJogou = 0;
-		quantasVezesZerou = 0;
+		this.maiorScore = 0;
+		this.quantasVezesJogou = 0;
+		this.quantasVezesZerou = 0;
 		this.tipo = tipo;
 	}
 	
@@ -64,15 +64,14 @@ public class Jogo {
 		this.quantasVezesZerou = quantasVezesZerou;
 	}
 	
-	//Adicionei esse método.
+	
 	public void registraJogada(int score, boolean zerou){
-		setQuantasVezesJogou(getQuantasVezesZerou()+1);
 		if(zerou == true){
 			setQuantasVezesZerou(getQuantasVezesZerou()+1);
 		}
-		/*if(score > maiorScore){
+		if(score > maiorScore){
 			setMaiorScore(score);
-		}*/
+		}
 	}
 	
 	public void Jogabilidade(Jogabilidade jogabilidade){
@@ -80,14 +79,12 @@ public class Jogo {
 			for (Jogabilidade jogabilidade2 : enums) {
 				if(jogabilidade == jogabilidade2){
 					existe = true;
-					//System.out.println("Jogabilidade repetida não pode ser adicionada");
 					break;
 				}
 			}
 				
 			if(existe == false){
 				enums.add(jogabilidade);
-				//System.out.println("Jogabilidade Adicionada");
 			}
 			
 		}
@@ -101,7 +98,19 @@ public class Jogo {
 	}
 	
 	@Override
+	public boolean equals(Object obj){
+		if(obj instanceof Jogo){
+			Jogo outro = (Jogo) obj;
+			if(outro.getNome().equals(this.nome) && outro.getTipo().equals(this.tipo)){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	@Override
 	public String toString(){
-		return "Nome: " + this.nome;
+		return "Nome: " + this.nome + "\nPreco: " + this.preco + "\nMaior Score: " + this.maiorScore
+				+ "\nQuantas Vezes Jogou: " + this.quantasVezesJogou;
 	}
 }
