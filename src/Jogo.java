@@ -9,15 +9,21 @@ public class Jogo {
 	private int maiorScore;
 	private int quantasVezesJogou;
 	private int quantasVezesZerou;
+	private String tipo;
 	
-	public Jogo(String nome, double preco){
+	public Jogo(String nome, double preco, String tipo){
 		this.nome = nome;
 		this.preco = preco;
 		maiorScore = 0;
 		quantasVezesJogou = 0;
 		quantasVezesZerou = 0;
+		this.tipo = tipo;
 	}
 	
+	public String getTipo() {
+		return tipo;
+	}
+
 	public String getNome() {
 		return nome;
 	}
@@ -64,9 +70,9 @@ public class Jogo {
 		if(zerou == true){
 			setQuantasVezesZerou(getQuantasVezesZerou()+1);
 		}
-		if(score > maiorScore){
+		/*if(score > maiorScore){
 			setMaiorScore(score);
-		}
+		}*/
 	}
 	
 	public void Jogabilidade(Jogabilidade jogabilidade){
