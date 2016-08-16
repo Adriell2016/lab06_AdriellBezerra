@@ -1,4 +1,4 @@
-package jogo;
+
 
 import java.util.ArrayList;
 
@@ -65,30 +65,35 @@ public class Usuario {
 		this.qtdDinheiro += dinheiro;
 	}
 	
-	public void registraJogada(Jogo jogo, int score, boolean zerou){
+	public int registraJogada(Jogo jogo, int score, boolean zerou){
 		
+		int retorno = 0;
 		for (int i = 0; i < jogosComprados.size(); i++){
 			
 			if(jogo.equals(jogosComprados.get(i))){
 				jogosComprados.get(i).setQuantasVezesJogou(jogosComprados.get(i).getQuantasVezesJogou()+1);
-				//jogosComprados.get(i).registraJogada(score, zerou);
+				
 				
 				if (jogo.getTipo().equals("rpg")){
 					setX2p(getX2p()+10);
 					jogosComprados.get(i).registraJogada(score, zerou);
-				}else if(jogo.getTipo().equals("plataforma")){
+					retorno = 10;
+				}else if(jogo.getTipo().equals("plataforma") && zerou == true){
 					setX2p(getX2p()+20);
 					jogosComprados.get(i).registraJogada(score, zerou);
+					retorno = 20;
 				}else{
 					if(score > jogosComprados.get(i).getMaiorScore()){
 						int s = score/1000;
 						setX2p(getX2p()+(1*s));
 						jogosComprados.get(i).registraJogada(score, zerou);
+						retorno = s;
 					}
 				}
 			break;
 			}
 		}
+		return retorno;
 			
 	}
 	

@@ -1,4 +1,4 @@
-package jogo;
+
 
 public class TesteComMain {
 	public static void main(String[] args){
@@ -30,7 +30,7 @@ public class TesteComMain {
 	
 	public static void compraJogoRegistraJogada(){
 		
-		UsuarioNoob usuario1 = new UsuarioNoob("Adriell", "adriell.bezerra", 1000);
+		/*UsuarioNoob usuario1 = new UsuarioNoob("Adriell", "adriell.bezerra", 1000);
 		Jogo novoJogo3 = new Jogo("suicide", 400.00, "rpg");
 		usuario1.comprarJogo(novoJogo3);
 		usuario1.registraJogada(novoJogo3, 1000, false);
@@ -49,13 +49,21 @@ public class TesteComMain {
 		System.out.println(usuario2);
 		
 		System.out.println("\n\n");
-		UsuarioVeterano usuario3 = new UsuarioVeterano("Ariell Bezerra", "ariell.sousa", 1000.00);
-		JogoLuta novoJogo5 = new JogoLuta("Mortal Combat", 400.00);
+		UsuarioNoob usuario3 = new UsuarioNoob("Ariell Bezerra", "ariell.sousa", 1000.00);
+		JogoLuta novoJogo5 = new JogoLuta("Mortal Combat", 100.00);
 		usuario3.comprarJogo(novoJogo5);
-		usuario3.registraJogada(novoJogo5, 10, false);
+		usuario3.registraJogada(novoJogo5, 20000, false);
 		System.out.println(usuario3);
-		usuario3.registraJogada(novoJogo5, 2000, false);
-		usuario3.imprimeJogosComprados();
-		System.out.println(usuario3);
+		usuario3.registraJogada(novoJogo5, 40000, false);
+		System.out.println(usuario3);*/
+		
+		UsuarioNoob usuario4 = new UsuarioNoob("Adriell", "adriell.adv", 1000.00);
+		JogoPlataforma novoJogo6 = new JogoPlataforma("Super Mario World", 30.00);
+		usuario4.comprarJogo(novoJogo6);
+		usuario4.registraJogada(novoJogo6, 60000, true);
+	
+		System.out.println(usuario4);
+		
+		
 	}
 }

@@ -1,4 +1,4 @@
-package jogo;
+
 
 public class JogoRPG extends Jogo {
 		
