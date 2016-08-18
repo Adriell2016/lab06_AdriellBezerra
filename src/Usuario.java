@@ -14,11 +14,11 @@ public class Usuario {
 		this.jogosComprados = jogosComprados;
 	}
 
-	public Usuario(String nome, String nomeLogin, double qtdDinheiro, int x2p){
+	public Usuario(String nome, String nomeLogin, double qtdDinheiro){
 		this.nome = nome;
 		this.nomeLogin = nomeLogin;
 		this.qtdDinheiro = qtdDinheiro;
-		this.x2p = x2p;
+		
 	}
 	
 	public int getX2p() {
@@ -65,6 +65,7 @@ public class Usuario {
 		this.qtdDinheiro += dinheiro;
 	}
 	
+	/*
 	public int registraJogada(Jogo jogo, int score, boolean zerou){
 		
 		int retorno = 0;
@@ -95,12 +96,37 @@ public class Usuario {
 		}
 		return retorno;
 			
+	}*/
+	
+	//Criei novo registraJogada - TESTES
+	public int registraJogada(Jogo jogo, int score, boolean zerou){
+		int x2pJogada = 0;
+		jogo.registraJogada(score, zerou);
+		x2pJogada = jogo.getX2p();
+		this.x2p += x2pJogada;
+		jogo.setX2p(0);
+		return x2pJogada;
 	}
+	
 	
 	public void imprimeJogosComprados(){
 		for (Jogo jogo : jogosComprados) {
 			System.out.println(jogo);
 		}
+	}
+	
+	public int sizeJogosComprados(){
+		return jogosComprados.size();
+	}
+	
+	public double totalPrecoJogos(){
+		double retorno = 0;
+		
+		for (int i = 0; i < jogosComprados.size(); i++){
+			retorno += jogosComprados.get(i).getPreco();
+		}
+		
+		return retorno;
 	}
 	
 	@Override

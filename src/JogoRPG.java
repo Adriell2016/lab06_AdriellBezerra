@@ -7,5 +7,23 @@ public class JogoRPG extends Jogo {
 		
 	}
 	
+	@Override
+	public String toString(){
+		return super.toString() + "RPG:\n" + "==> Jogou " + this.getQuantasVezesJogou() + " vez(es)\n"
+				+ "==> Zerou " + this.getQuantasVezesZerou() + " vez(es)\n"
+				+ "==> Maior score: " + this.getMaiorScore();
+	}
+	
+	@Override
+	public void registraJogada(int score, boolean zerou){
+		this.setQuantasVezesJogou(getQuantasVezesJogou()+1);
+		if(zerou == true){
+			setQuantasVezesZerou(getQuantasVezesZerou()+1);
+		}
+		if(score > getMaiorScore()){
+			setMaiorScore(score);
+		}
+		this.setX2p(10);
+	}
 	
 }

@@ -41,8 +41,13 @@ public class Facade {
 			if(this.usuario.get(i).equals(usuario)){
 				
 				System.out.println("=== Central P2-CG ===\n");
+				System.out.println(usuario.toString());
+				System.out.println("Lista de Jogos:");
 				
-				
+				usuario.imprimeJogosComprados();
+				System.out.println("\nTotal de preço dos jogos: R$ " + usuario.totalPrecoJogos());
+				System.out.println("\n--------------------------------------------");
+			
 			}
 		}
 	}

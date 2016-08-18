@@ -3,7 +3,8 @@
 public class UsuarioVeterano extends Usuario {
 
 	public UsuarioVeterano(String nome, String nomeLogin, double qtdDinheiro) {
-		super(nome, nomeLogin, qtdDinheiro, 1000);
+		super(nome, nomeLogin, qtdDinheiro);
+		this.setX2p(1000);
 		// TODO Auto-generated constructor stub
 		
 	}
@@ -20,7 +21,7 @@ public class UsuarioVeterano extends Usuario {
 	
 	@Override
 	public String toString(){
-		return super.toString() + "/n" + super.getNome() + " - Jogador Veterano";
+		return super.toString() + "\n" + super.getNome() + " - Jogador Veterano";
 		
 	}
 }

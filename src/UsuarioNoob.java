@@ -1,7 +1,8 @@
 public class UsuarioNoob extends Usuario{
 	
 	public UsuarioNoob(String nome, String nomeLogin, double qtdDinheiro) {
-		super(nome, nomeLogin, qtdDinheiro, 0);
+		super(nome, nomeLogin, qtdDinheiro);
+		this.setX2p(0);
 		// TODO Auto-generated constructor stub
 		
 	}
@@ -17,7 +18,7 @@ public class UsuarioNoob extends Usuario{
 	
 	@Override
 	public String toString(){
-		String retorno = super.toString() + "/n" + super.getNome() + " - Jogador Noob\n";
+		String retorno = super.toString() + "\n" + super.getNome() + " - Jogador Noob\n";
 		
 		return retorno;
 	}

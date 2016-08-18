@@ -9,7 +9,11 @@ public class Jogo {
 	private int quantasVezesJogou;
 	private int quantasVezesZerou;
 	private String tipo;
+	//Acrescentei o X2p - TESTES
+	private int x2p;
 	
+	
+
 	public Jogo(String nome, double preco, String tipo){
 		this.nome = nome;
 		this.preco = preco;
@@ -17,12 +21,27 @@ public class Jogo {
 		this.quantasVezesJogou = 0;
 		this.quantasVezesZerou = 0;
 		this.tipo = tipo;
+		
+	}
+	
+	//Criei um novo construtor - TESTES
+	public Jogo(String nome, double preco){
+		this.nome = nome;
+		this.preco = preco;
+		this.maiorScore = 0;
+		this.quantasVezesJogou = 0;
+		this.quantasVezesZerou = 0;
+		this.setX2p(0);
 	}
 	
 	public String getTipo() {
 		return tipo;
 	}
 
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	
 	public String getNome() {
 		return nome;
 	}
@@ -65,12 +84,7 @@ public class Jogo {
 	
 	
 	public void registraJogada(int score, boolean zerou){
-		if(zerou == true){
-			setQuantasVezesZerou(getQuantasVezesZerou()+1);
-		}
-		if(score > maiorScore){
-			setMaiorScore(score);
-		}
+		
 	}
 	
 	public void Jogabilidade(Jogabilidade jogabilidade){
@@ -109,7 +123,14 @@ public class Jogo {
 	
 	@Override
 	public String toString(){
-		return "Nome: " + this.nome + "\nPreco: " + this.preco + "\nMaior Score: " + this.maiorScore
-				+ "\nQuantas Vezes Jogou: " + this.quantasVezesJogou;
+		return "+ " + this.nome + " - ";
+	}
+
+	public int getX2p() {
+		return x2p;
+	}
+
+	public void setX2p(int x2p) {
+		this.x2p = x2p;
 	}
 }
