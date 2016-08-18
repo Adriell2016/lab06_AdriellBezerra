@@ -1,7 +1,15 @@
 import java.util.ArrayList;
 
-//gdfg
+
 public class Facade {
 
 	private ArrayList<Usuario> usuario = new ArrayList<Usuario>();
+
+	public ArrayList<Usuario> getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(ArrayList<Usuario> usuario) {
+		this.usuario = usuario;
+	}
 }
