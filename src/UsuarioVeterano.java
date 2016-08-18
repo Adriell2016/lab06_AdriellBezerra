@@ -17,4 +17,10 @@ public class UsuarioVeterano extends Usuario {
 	    setX2p(getX2p() + (((int) jogo.getPreco()) * 15));
 	    
 	}
+	
+	@Override
+	public String toString(){
+		return super.toString() + "/n" + super.getNome() + " - Jogador Veterano";
+		
+	}
 }

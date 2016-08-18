@@ -105,7 +105,19 @@ public class Usuario {
 	
 	@Override
 	public String toString(){
-		return "Usuario: " + this.nome + "\nX2P: " + this.x2p;
+		return this.nomeLogin;
 	}
+	
+	@Override
+	public boolean equals(Object obj){
+		if(obj instanceof Usuario){
+			Usuario outro = (Usuario) obj;
+			if(outro.getNome().equals(this.nome) && outro.getNomeLogin().equals(this.nomeLogin)){
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	
 }

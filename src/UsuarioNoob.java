@@ -1,5 +1,3 @@
-
-
 public class UsuarioNoob extends Usuario{
 	
 	public UsuarioNoob(String nome, String nomeLogin, double qtdDinheiro) {
@@ -17,6 +15,11 @@ public class UsuarioNoob extends Usuario{
 	    setX2p(getX2p() + (((int) jogo.getPreco()) * 10));
 	}
 	
+	@Override
+	public String toString(){
+		String retorno = super.toString() + "/n" + super.getNome() + " - Jogador Noob\n";
 		
+		return retorno;
+	}
 	
 }

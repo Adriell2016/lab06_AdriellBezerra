@@ -28,6 +28,12 @@ public class TesteComMain {
 		novoJogo2.imprimeEnums();
 	}
 	
+	/**
+	 * 
+	 */
+	/**
+	 * 
+	 */
 	public static void compraJogoRegistraJogada(){
 		
 		/*UsuarioNoob usuario1 = new UsuarioNoob("Adriell", "adriell.bezerra", 1000);
@@ -55,15 +61,17 @@ public class TesteComMain {
 		usuario3.registraJogada(novoJogo5, 20000, false);
 		System.out.println(usuario3);
 		usuario3.registraJogada(novoJogo5, 40000, false);
-		System.out.println(usuario3);*/
+		System.out.println(usuario3);
 		
 		UsuarioNoob usuario4 = new UsuarioNoob("Adriell", "adriell.adv", 1000.00);
 		JogoPlataforma novoJogo6 = new JogoPlataforma("Super Mario World", 30.00);
 		usuario4.comprarJogo(novoJogo6);
 		usuario4.registraJogada(novoJogo6, 60000, true);
 	
-		System.out.println(usuario4);
+		System.out.println(usuario4);*/
 		
 		
 	}
+	
+	public static void 
 }

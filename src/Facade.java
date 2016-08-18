@@ -12,4 +12,38 @@ public class Facade {
 	public void setUsuario(ArrayList<Usuario> usuario) {
 		this.usuario = usuario;
 	}
+	
+	public void adicionaUsuario(Usuario usuario){
+		this.usuario.add(usuario);
+		
+	}
+	
+	public void adicionaDinheiro(String nomeLogin, double dinheiro){
+		for(int i = 0; i < this.usuario.size(); i++){
+			if(this.usuario.get(i).getNomeLogin().equals(nomeLogin)){
+				this.usuario.get(i).adicionarDinheiro(dinheiro);
+			}
+		}
+	}
+	
+	public void vendeJogo(Jogo jogo, String nomeLogin){
+		for(int i = 0; i < this.usuario.size(); i++){
+			if(this.usuario.get(i).getNomeLogin().equals(nomeLogin)){
+				if(this.usuario.get(i).getQtdDinheiro() >= jogo.getPreco()){
+					this.usuario.get(i).comprarJogo(jogo);
+				}
+			}
+		}
+	}
+	
+	public void imprimeInformacoes(Usuario usuario){
+		for(int i = 0; i < this.usuario.size(); i++){
+			if(this.usuario.get(i).equals(usuario)){
+				
+				System.out.println("=== Central P2-CG ===\n");
+				
+				
+			}
+		}
+	}
 }
