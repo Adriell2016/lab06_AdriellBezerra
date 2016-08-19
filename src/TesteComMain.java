@@ -71,9 +71,9 @@ public class TesteComMain {
 	
 	public static void imprimeInformacoesUsuarios(){
 		Facade facade = new Facade();
-		Jogo jogo = new JogoPlataforma("Imperia Online", 200.00);
+		Jogo jogo = new JogoPlataforma("Luta Livre", 200.00);
 		Jogo jogo2 = new JogoLuta("Magika", 300);
-		Jogo jogo3 = new JogoRPG("LutaLivre", 50);
+		Jogo jogo3 = new JogoRPG("Imperia Online", 50);
 		
 		Usuario usuario5 = new UsuarioNoob("Jose Florencio", "jose.florencio", 1000.00);
 		facade.adicionaUsuario(usuario5);

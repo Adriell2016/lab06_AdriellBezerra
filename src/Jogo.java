@@ -1,6 +1,7 @@
 
 import java.util.ArrayList;
 
+
 public class Jogo {
 	private ArrayList<Jogabilidade> enums = new ArrayList<Jogabilidade>();
 	private String nome;
@@ -13,7 +14,7 @@ public class Jogo {
 	private int x2p;
 	
 	
-
+	/*
 	public Jogo(String nome, double preco, String tipo){
 		this.nome = nome;
 		this.preco = preco;
@@ -22,7 +23,7 @@ public class Jogo {
 		this.quantasVezesZerou = 0;
 		this.tipo = tipo;
 		
-	}
+	}*/
 	
 	//Criei um novo construtor - TESTES
 	public Jogo(String nome, double preco){
