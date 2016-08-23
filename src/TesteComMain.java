@@ -77,10 +77,13 @@ public class TesteComMain {
 		
 		Usuario usuario5 = new UsuarioNoob("Jose Florencio", "jose.florencio", 1000.00);
 		facade.adicionaUsuario(usuario5);
+		
 		facade.vendeJogo(jogo, "jose.florencio");
 		facade.vendeJogo(jogo2, "jose.florencio");
 		usuario5.registraJogada(jogo, 320, true);
 		usuario5.registraJogada(jogo2, 1000, false);
+		facade.upgrade("jose.florencio");
+		
 		facade.imprimeInformacoes(usuario5);
 		
 		Usuario usuario6 = new UsuarioVeterano("Adriell Lima", "adriell.lima", 1000.00);
@@ -88,6 +91,8 @@ public class TesteComMain {
 		facade.vendeJogo(jogo3, "adriell.lima");
 		usuario6.registraJogada(jogo3, 300, true);
 		facade.imprimeInformacoes(usuario6);
+		
+		
 		
 	}
 }
