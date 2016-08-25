@@ -1,9 +1,11 @@
+/* 115110099 - Adriell de Sousa Bezerra: LAB 6 - Turma Raquel */
+
 public class UsuarioNoob extends Usuario{
 	
-	public UsuarioNoob(String nome, String nomeLogin, double qtdDinheiro) {
+	public UsuarioNoob(String nome, String nomeLogin, double qtdDinheiro) throws Exception {
 		super(nome, nomeLogin, qtdDinheiro);
 		this.setX2p(0);
-		// TODO Auto-generated constructor stub
+		
 		
 	}
 
@@ -18,7 +20,7 @@ public class UsuarioNoob extends Usuario{
 	
 	@Override
 	public String toString(){
-		String retorno = super.toString() + "\n" + super.getNome() + " - Jogador Noob\n";
+		String retorno = super.toString() + "\n" + super.getNome() + " - Jogador Noob";
 		
 		return retorno;
 	}

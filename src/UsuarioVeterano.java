@@ -1,11 +1,11 @@
-;
+/* 115110099 - Adriell de Sousa Bezerra: LAB 6 - Turma Raquel */
 
 public class UsuarioVeterano extends Usuario {
 
-	public UsuarioVeterano(String nome, String nomeLogin, double qtdDinheiro) {
+	public UsuarioVeterano(String nome, String nomeLogin, double qtdDinheiro) throws Exception {
 		super(nome, nomeLogin, qtdDinheiro);
 		this.setX2p(1000);
-		// TODO Auto-generated constructor stub
+		
 		
 	}
 

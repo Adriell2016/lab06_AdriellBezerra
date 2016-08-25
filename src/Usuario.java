@@ -1,4 +1,4 @@
-
+/* 115110099 - Adriell de Sousa Bezerra: LAB 6 - Turma Raquel */
 
 import java.util.ArrayList;
 
@@ -10,16 +10,25 @@ public class Usuario {
 	private ArrayList<Jogo> jogosComprados = new ArrayList<Jogo>();
 	
 	
-	public void setJogosComprados(ArrayList<Jogo> jogosComprados) {
-		this.jogosComprados = jogosComprados;
-	}
-
-	public Usuario(String nome, String nomeLogin, double qtdDinheiro){
+	public Usuario(String nome, String nomeLogin, double qtdDinheiro) throws Exception{
+		
+		if(nome.trim().equals("") || nome == null){
+			Exception e = new Exception("Nome vazio ou nulo.");
+			throw e;
+		}
+		
+		if(nomeLogin.trim().equals("") || nomeLogin == null){
+			Exception e = new Exception("Nome de login vazio ou nulo.");
+			throw e;
+		}
+		
 		this.nome = nome;
 		this.nomeLogin = nomeLogin;
 		this.qtdDinheiro = qtdDinheiro;
 		
 	}
+	
+	
 	
 	public int getX2p() {
 		return x2p;
@@ -53,6 +62,10 @@ public class Usuario {
 		this.qtdDinheiro = qtdDinheiro;
 	}
 	
+	public void setJogosComprados(ArrayList<Jogo> jogosComprados) {
+		this.jogosComprados = jogosComprados;
+	}
+	
 	public ArrayList<Jogo> getJogosComprados() {
 		return jogosComprados;
 	}
@@ -61,45 +74,16 @@ public class Usuario {
 		jogosComprados.add(jogo);
 	}
 	
-	public void adicionarDinheiro(double dinheiro){
+	public void adicionarDinheiro(double dinheiro) throws Exception{
+		if (dinheiro < 0){
+			Exception e = new Exception("Quantidade negativa");
+			throw e;
+		}
 		this.qtdDinheiro += dinheiro;
 	}
 	
-	/*
-	public int registraJogada(Jogo jogo, int score, boolean zerou){
-		
-		int retorno = 0;
-		for (int i = 0; i < jogosComprados.size(); i++){
-			
-			if(jogo.equals(jogosComprados.get(i))){
-				jogosComprados.get(i).setQuantasVezesJogou(jogosComprados.get(i).getQuantasVezesJogou()+1);
-				
-				
-				if (jogo.getTipo().equals("rpg")){
-					setX2p(getX2p()+10);
-					jogosComprados.get(i).registraJogada(score, zerou);
-					retorno = 10;
-				}else if(jogo.getTipo().equals("plataforma") && zerou == true){
-					setX2p(getX2p()+20);
-					jogosComprados.get(i).registraJogada(score, zerou);
-					retorno = 20;
-				}else{
-					if(score > jogosComprados.get(i).getMaiorScore()){
-						int s = score/1000;
-						setX2p(getX2p()+(1*s));
-						jogosComprados.get(i).registraJogada(score, zerou);
-						retorno = s;
-					}
-				}
-			break;
-			}
-		}
-		return retorno;
-			
-	}*/
 	
-	//Criei novo registraJogada - TESTES
-	public int registraJogada(Jogo jogo, int score, boolean zerou){
+	public int registraJogada(Jogo jogo, int score, boolean zerou) throws Exception{
 		int x2pJogada = 0;
 		jogo.registraJogada(score, zerou);
 		x2pJogada = jogo.getX2p();

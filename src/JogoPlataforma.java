@@ -1,8 +1,8 @@
-
+/* 115110099 - Adriell de Sousa Bezerra: LAB 6 - Turma Raquel */
 
 public class JogoPlataforma extends Jogo{
 
-	public JogoPlataforma(String nome, double preco) {
+	public JogoPlataforma(String nome, double preco) throws Exception {
 		super(nome, preco);
 		// TODO Auto-generated constructor stub
 	}
@@ -15,11 +15,9 @@ public class JogoPlataforma extends Jogo{
 	}
 	
 	@Override
-	public void registraJogada(int score, boolean zerou){
-		this.setQuantasVezesJogou(getQuantasVezesJogou()+1);
-		if(zerou == true){
-			setQuantasVezesZerou(getQuantasVezesZerou()+1);
-		}
+	public void registraJogada(int score, boolean zerou) throws Exception{
+		super.registraJogada(score, zerou);
+		
 		if(score > getMaiorScore()){
 			setMaiorScore(score);
 		}

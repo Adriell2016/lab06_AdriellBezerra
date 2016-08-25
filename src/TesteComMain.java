@@ -1,14 +1,14 @@
-
+/* 115110099 - Adriell de Sousa Bezerra: LAB 6 - Turma Raquel */
 
 public class TesteComMain {
-	public static void main(String[] args){
+	public static void main(String[] args) throws Exception{
 		//testaJogabilidade();
 		//compraJogoRegistraJogada();
 		imprimeInformacoesUsuarios();
 		
 	}
 	
-	public static void testaJogabilidade(){
+	public static void testaJogabilidade() throws Exception{
 		JogoRPG novoJogo = new JogoRPG("jogo1", 7.99);
 		novoJogo.registraJogada(10, false);
 		novoJogo.Jogabilidade(Jogabilidade.COMPETITIVO);
@@ -30,7 +30,7 @@ public class TesteComMain {
 	}
 	
 	
-	public static void compraJogoRegistraJogada(){
+	public static void compraJogoRegistraJogada() throws Exception{
 		
 		UsuarioNoob usuario1 = new UsuarioNoob("Adriell", "adriell.bezerra", 1000);
 		Jogo novoJogo3 = new JogoPlataforma("suicide", 400.00);
@@ -69,29 +69,32 @@ public class TesteComMain {
 		
 	}
 	
-	public static void imprimeInformacoesUsuarios(){
+	public static void imprimeInformacoesUsuarios() throws Exception{
 		Facade facade = new Facade();
-		Jogo jogo = new JogoPlataforma("Luta Livre", 200.00);
+		Jogo jogo = new JogoPlataforma("Luta livre", 200);
 		Jogo jogo2 = new JogoLuta("Magika", 300);
 		Jogo jogo3 = new JogoRPG("Imperia Online", 50);
+		Jogo jogo4 = new JogoRPG("Magika", 500);
 		
-		Usuario usuario5 = new UsuarioNoob("Jose Florencio", "jose.florencio", 1000.00);
+		Usuario usuario5 = new UsuarioNoob("Jose", "jose.florencio", 1000.00);
 		facade.adicionaUsuario(usuario5);
 		
 		facade.vendeJogo(jogo, "jose.florencio");
 		facade.vendeJogo(jogo2, "jose.florencio");
-		usuario5.registraJogada(jogo, 320, true);
+		facade.vendeJogo(jogo4, "jose.florencio");
+		usuario5.registraJogada(jogo, 90, true);
 		usuario5.registraJogada(jogo2, 1000, false);
-		facade.upgrade("jose.florencio");
+		usuario5.registraJogada(jogo2, 1009, false);
+		
 		
 		facade.imprimeInformacoes(usuario5);
 		
 		Usuario usuario6 = new UsuarioVeterano("Adriell Lima", "adriell.lima", 1000.00);
 		facade.adicionaUsuario(usuario6);
-		facade.vendeJogo(jogo3, "adriell.lima");
-		usuario6.registraJogada(jogo3, 300, true);
+		facade.vendeJogo(jogo4, "adriell.lima");
+		usuario6.registraJogada(jogo3, 200, true);
 		facade.imprimeInformacoes(usuario6);
-		
+				
 		
 		
 	}
